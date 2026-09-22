@@ -1,5 +1,8 @@
 # 🌊 Flowlang Programming Language (v0.1.0)
 
+[![PyPI version](https://img.shields.io/pypi/v/flowlang-lang.svg)](https://pypi.org/project/flowlang-lang/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 > **A modern, pipeline-oriented programming language designed for expressive data transformation workflows, readable syntax, and dual-engine execution (Tree-Walking Interpreter & Stack-Based Bytecode VM).**
 
 ---
@@ -47,47 +50,102 @@
 
 ---
 
-## 🚀 Installation & Quickstart
+## 🚀 Installation & Usage
 
-### 1. Global Command Installation (Recommended)
-Clone the repository and install locally using `pip`:
+There are two primary ways to install and use Flowlang:
+
+### 1. CLI Way (Recommended for running `.flow` files from terminal)
+
+For executing `.flow` source files directly from your terminal, installing via **`pipx`** is recommended because it manages the command-line executable and path reliably in an isolated environment:
+
+```bash
+pipx install flowlang-lang
+```
+
+Alternative: `pip install flowlang-lang`
+
+Once installed, use the **`flowlang`** CLI executable:
+
+```bash
+# Display version
+flowlang --version
+
+# Display help and usage options
+flowlang --help
+
+# Run a Flowlang program (Default: Bytecode Compiler & Virtual Machine)
+flowlang program.flow
+flowlang examples/01_hello_world.flow
+
+# Explicitly choose execution engine
+flowlang program.flow --mode vm       # Stack Virtual Machine
+flowlang program.flow --mode interp   # Tree-Walking Interpreter
+```
+
+---
+
+### 2. Python Package Way (Using Flowlang from Python)
+
+To import and use Flowlang programmatically inside Python applications:
+
+```bash
+pip install flowlang-lang
+```
+
+You can import **`flowlang`** in Python to tokenize, parse, analyze, evaluate, or compile Flowlang source code using the exported API:
+
+```python
+import flowlang
+
+source_code = """
+let x <- 10
+let y <- 20
+show x + y
+"""
+
+# 1. Lexical Analysis & Parsing
+lexer = flowlang.Lexer(source_code)
+tokens = lexer.tokenize()
+
+parser = flowlang.Parser(tokens)
+ast = parser.parse()
+
+# 2. Option A: Execute via Stack Virtual Machine
+compiler = flowlang.Compiler()
+instructions = compiler.compile(ast)
+
+vm = flowlang.VirtualMachine()
+vm.run(instructions)
+print(vm.output_buffer)  # ['30']
+
+# 3. Option B: Evaluate via Tree-Walking Interpreter
+interpreter = flowlang.Interpreter()
+interpreter.evaluate(ast)
+print(interpreter.output_buffer)  # ['30']
+```
+
+---
+
+### 3. Install from GitHub Source (Development)
+
+Source code and development tools are available on GitHub:
+
 ```bash
 git clone https://github.com/Nilkamal21/Flowlang.git
 cd Flowlang
 pip install -e .
 ```
-Now run any Flowlang script directly from your terminal:
-```bash
-flowlang examples/01_hello_world.flow
-```
-
-### 2. Local Windows Script Execution
-You can also run scripts directly via the included `flowlang.cmd` script without installing `pip`:
-```powershell
-.\flowlang examples/01_hello_world.flow
-```
 
 ---
 
-## 🛠️ CLI Usage & Inspection Tools
-
-The `flowlang` command defaults to high-performance **Bytecode Virtual Machine** execution (`--mode vm`), while allowing engine switching and compiler disassembly inspection flags:
+## 🛠️ CLI Inspection Tools
 
 ```bash
-# 1. Run using Bytecode Compiler & Virtual Machine (DEFAULT)
-flowlang examples/10_data_processing_program.flow
-
-# 2. Run using Tree-Walking Interpreter
-flowlang examples/10_data_processing_program.flow --mode interp
-
-# 3. Disassemble Compiled Bytecode Instructions
+# Disassemble Compiled Bytecode Instructions
 flowlang examples/05_simple_pipeline.flow --dump-bytecode
 
-# 4. Print Abstract Syntax Tree (AST)
+# Print Abstract Syntax Tree (AST)
 flowlang examples/05_simple_pipeline.flow --dump-ast
-
-# 5. Display Version Information
-flowlang --version
 ```
 
 ---
@@ -209,5 +267,6 @@ Flowlang/
 
 ## 📖 Documentation & References
 
+- **[PyPI Official Package Page](https://pypi.org/project/flowlang-lang/)**: Official release metadata and wheel downloads.
 - **[Flowlang v0.1 Formal Language Specification](docs/spec_v0.1.md)**: Formal EBNF grammar, lexical rules, operator precedence table, AST schema, and ISA opcodes.
 - **[Comprehensive Architecture & Interview Guide](EXPLANATION.md)**: Detailed phase-by-phase walkthrough with flowcharts, call stack trace diagrams, and component breakdowns.
