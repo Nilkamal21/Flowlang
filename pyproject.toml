@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "flowlang"
+name = "flowlang-lang"
 version = "0.1.0"
 description = "A pipeline-oriented programming language with Compiler and Virtual Machine."
 readme = "README.md"
