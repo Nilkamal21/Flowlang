@@ -1,6 +1,6 @@
 import pytest
-from lexer import Lexer
-from tokens import TokenType
+from flowlang.lexer import Lexer
+from flowlang.tokens import TokenType
 
 def test_basic_variables():
     code = 'let age <- 21\nlet name <- "Nilkamal"'

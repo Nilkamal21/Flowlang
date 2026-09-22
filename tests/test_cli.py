@@ -1,6 +1,6 @@
 import sys
 import pytest
-from cli import main, run_file
+from flowlang.cli import main, run_file
 
 def test_cli_version(capsys):
     with pytest.raises(SystemExit) as exc_info:

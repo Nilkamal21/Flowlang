@@ -1,5 +1,5 @@
 import pytest
-from bytecode import Opcode, Instruction
+from flowlang.bytecode import Opcode, Instruction
 
 def test_opcode_enum_members():
     assert Opcode.LOAD_CONST.name == "LOAD_CONST"

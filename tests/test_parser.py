@@ -1,7 +1,7 @@
 import pytest
-from lexer import Lexer
-from parser import Parser
-from ast_nodes import (
+from flowlang.lexer import Lexer
+from flowlang.parser import Parser
+from flowlang.ast_nodes import (
     ProgramNode, VarDeclNode, VarAssignNode, ShowNode, WhenNode,
     FunctionDeclNode, GiveNode, PipelineNode, KeepStageNode,
     TransformIntoStageNode, ShowStageNode, BinaryOpNode, UnaryOpNode,

@@ -1,9 +1,9 @@
 import pytest
-from lexer import Lexer
-from parser import Parser
-from environment import Environment
-from interpreter import Interpreter
-from ast_nodes import (
+from flowlang.lexer import Lexer
+from flowlang.parser import Parser
+from flowlang.environment import Environment
+from flowlang.interpreter import Interpreter
+from flowlang.ast_nodes import (
     LiteralNode, VarAccessNode, ListNode, UnaryOpNode, BinaryOpNode,
     VarDeclNode, VarAssignNode, ShowNode, WhenNode
 )

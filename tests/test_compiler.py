@@ -1,8 +1,8 @@
 import pytest
-from lexer import Lexer
-from parser import Parser
-from compiler import Compiler, FunctionCode
-from bytecode import Opcode, Instruction
+from flowlang.lexer import Lexer
+from flowlang.parser import Parser
+from flowlang.compiler import Compiler, FunctionCode
+from flowlang.bytecode import Opcode, Instruction
 
 def compile_code(code: str) -> list[Instruction]:
     lexer = Lexer(code)

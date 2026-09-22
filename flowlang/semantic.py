@@ -1,5 +1,5 @@
 from typing import Any, Dict, List, Optional
-from ast_nodes import (
+from .ast_nodes import (
     ASTNode, ProgramNode, VarDeclNode, VarAssignNode, ShowNode,
     WhenNode, FunctionDeclNode, GiveNode, PipelineNode, KeepStageNode,
     TransformIntoStageNode, TransformUsingStageNode, ShowStageNode,

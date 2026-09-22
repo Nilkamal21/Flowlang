@@ -1,9 +1,9 @@
 import pytest
-from lexer import Lexer
-from parser import Parser
-from semantic import SemanticAnalyzer
-from compiler import Compiler
-from vm import VirtualMachine
+from flowlang.lexer import Lexer
+from flowlang.parser import Parser
+from flowlang.semantic import SemanticAnalyzer
+from flowlang.compiler import Compiler
+from flowlang.vm import VirtualMachine
 
 def run_vm(code: str) -> VirtualMachine:
     lexer = Lexer(code)

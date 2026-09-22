@@ -1,5 +1,5 @@
 from typing import Any, Dict, List, Optional
-from bytecode import Opcode, Instruction
+from .bytecode import Opcode, Instruction
 
 class VMFunction:
     """

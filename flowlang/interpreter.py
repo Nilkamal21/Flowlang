@@ -1,6 +1,6 @@
 from typing import Any, List, Optional
-from environment import Environment
-from ast_nodes import (
+from .environment import Environment
+from .ast_nodes import (
     ASTNode, ProgramNode, VarDeclNode, VarAssignNode, ShowNode,
     WhenNode, FunctionDeclNode, GiveNode, PipelineNode, KeepStageNode,
     TransformIntoStageNode, TransformUsingStageNode, ShowStageNode,

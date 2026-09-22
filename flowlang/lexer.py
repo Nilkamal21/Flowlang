@@ -1,5 +1,5 @@
 from typing import List, Optional
-from tokens import Token, TokenType, KEYWORDS
+from .tokens import Token, TokenType, KEYWORDS
 
 class Lexer:
     """

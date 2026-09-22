@@ -1,6 +1,6 @@
 from typing import Any, List, Optional
-from bytecode import Opcode, Instruction
-from ast_nodes import (
+from .bytecode import Opcode, Instruction
+from .ast_nodes import (
     ASTNode, ProgramNode, VarDeclNode, VarAssignNode, ShowNode,
     WhenNode, FunctionDeclNode, GiveNode, PipelineNode, KeepStageNode,
     TransformIntoStageNode, TransformUsingStageNode, ShowStageNode,

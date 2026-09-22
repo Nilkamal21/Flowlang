@@ -1,7 +1,7 @@
 import pytest
-from lexer import Lexer
-from parser import Parser
-from semantic import SemanticAnalyzer, SemanticError
+from flowlang.lexer import Lexer
+from flowlang.parser import Parser
+from flowlang.semantic import SemanticAnalyzer, SemanticError
 
 def analyze_code(code: str) -> None:
     lexer = Lexer(code)

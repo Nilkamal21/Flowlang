@@ -3,13 +3,13 @@ import os
 import argparse
 from typing import List, Optional
 
-from lexer import Lexer
-from parser import Parser
-from semantic import SemanticAnalyzer
-from compiler import Compiler
-from vm import VirtualMachine
-from interpreter import Interpreter
-import ast_nodes
+from .lexer import Lexer
+from .parser import Parser
+from .semantic import SemanticAnalyzer
+from .compiler import Compiler
+from .vm import VirtualMachine
+from .interpreter import Interpreter
+from . import ast_nodes
 
 VERSION = "Flowlang v0.1.0 (Bytecode Compiler & Stack VM Engine)"
 

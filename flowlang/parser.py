@@ -1,6 +1,6 @@
 from typing import List, Optional
-from tokens import Token, TokenType
-from ast_nodes import (
+from .tokens import Token, TokenType
+from .ast_nodes import (
     ASTNode, ProgramNode, VarDeclNode, VarAssignNode, ShowNode,
     WhenNode, FunctionDeclNode, GiveNode, PipelineNode, KeepStageNode,
     TransformIntoStageNode, TransformUsingStageNode, ShowStageNode,

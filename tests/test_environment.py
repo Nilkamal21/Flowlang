@@ -1,5 +1,5 @@
 import pytest
-from environment import Environment
+from flowlang.environment import Environment
 
 def test_define_and_get_global():
     env = Environment()
