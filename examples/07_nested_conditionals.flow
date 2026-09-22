@@ -1,0 +1,19 @@
+# 07_nested_conditionals.flow
+# Deeply nested conditional blocks (when / otherwise)
+
+let temp <- 28
+let humidity <- 65
+
+when temp > 30:
+    when humidity > 60:
+        show "Weather: Hot and Humid"
+    otherwise:
+        show "Weather: Hot and Dry"
+otherwise:
+    when temp >= 20:
+        when humidity > 50:
+            show "Weather: Warm and Humid"
+        otherwise:
+            show "Weather: Warm and Pleasant"
+    otherwise:
+        show "Weather: Cold"

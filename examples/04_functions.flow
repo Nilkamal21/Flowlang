@@ -1,0 +1,18 @@
+# 04_functions.flow
+# User-defined functions, arguments, and return values (give)
+
+define add(x, y):
+    give x + y
+
+define square(n):
+    give n * n
+
+let result1 <- add(15, 25)
+show result1
+
+let result2 <- square(7)
+show result2
+
+# Nested function call
+let combined <- add(square(3), square(4))
+show combined

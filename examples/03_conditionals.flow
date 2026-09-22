@@ -1,0 +1,17 @@
+# 03_conditionals.flow
+# Conditional statements (when / otherwise) and boolean operations
+
+let score <- 85
+let passing_grade <- 70
+
+when score >= passing_grade:
+    show "Status: Passed"
+otherwise:
+    show "Status: Failed"
+
+let is_bonus <- true
+
+when score >= 80 and is_bonus:
+    show "Bonus Grade Unlocked!"
+otherwise:
+    show "Standard Grade"

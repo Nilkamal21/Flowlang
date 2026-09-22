@@ -1,0 +1,19 @@
+# 08_complex_pipeline.flow
+# Multi-stage pipeline with consecutive keep and transform steps
+
+let raw_scores <- [45, 88, 92, 60, 73, 30, 95, 82, 50, 100]
+
+show "Raw Exam Scores:"
+show raw_scores
+
+# 1. Keep passing scores (>= 60)
+# 2. Add 5 bonus points to each score
+# 3. Keep scores that reach >= 85 after bonus
+# 4. Multiply score by 2 for final rating scale
+show "Filtered & Boosted Honors Scores:"
+raw_scores
+  |> keep score where score >= 60
+  |> transform score into score + 5
+  |> keep score where score >= 85
+  |> transform score into score * 2
+  |> show

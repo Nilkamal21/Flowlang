@@ -1,0 +1,25 @@
+# 06_function_pipeline.flow
+# Using user-defined functions inside pipeline transform stages
+
+define double_val(val):
+    give val * 2
+
+define triple_val(val):
+    give val * 3
+
+let numbers <- [-5, 10, -3, 8, 0, 15]
+
+show "Original List:"
+show numbers
+
+show "Positive numbers doubled:"
+numbers
+  |> keep item where item > 0
+  |> transform item using double_val
+  |> show
+
+show "Positive numbers tripled:"
+numbers
+  |> keep item where item > 0
+  |> transform item using triple_val
+  |> show

@@ -1,0 +1,25 @@
+# 02_arithmetic.flow
+# Mathematical operators, precedence, and unary negation
+
+let a <- 10
+let b <- 3
+
+let sum <- a + b
+let diff <- a - b
+let prod <- a * b
+let quot <- a / b
+let rem <- a % b
+
+show sum
+show diff
+show prod
+show quot
+show rem
+
+# Operator precedence & grouping with parentheses
+let result <- (a + b) * (a - b)
+show result
+
+# Unary minus
+let neg <- -sum
+show neg

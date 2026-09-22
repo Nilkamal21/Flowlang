@@ -1,0 +1,8 @@
+# 01_hello_world.flow
+# Minimal starter program: variable declaration and printing
+
+let greeting <- "Hello, Flowlang!"
+show greeting
+
+let version <- 0.1
+show version

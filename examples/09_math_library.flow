@@ -1,0 +1,41 @@
+# 09_math_library.flow
+# Math utility functions implemented in Flowlang
+
+define absolute(n):
+    when n < 0:
+        give -n
+    otherwise:
+        give n
+
+define max(a, b):
+    when a > b:
+        give a
+    otherwise:
+        give b
+
+define min(a, b):
+    when a < b:
+        give a
+    otherwise:
+        give b
+
+define clamp(val, low, high):
+    give min(max(val, low), high)
+
+show "absolute(-42):"
+show absolute(-42)
+
+show "max(18, 25):"
+show max(18, 25)
+
+show "min(18, 25):"
+show min(18, 25)
+
+show "clamp(105, 0, 100):"
+show clamp(105, 0, 100)
+
+show "clamp(-15, 0, 100):"
+show clamp(-15, 0, 100)
+
+show "clamp(50, 0, 100):"
+show clamp(50, 0, 100)

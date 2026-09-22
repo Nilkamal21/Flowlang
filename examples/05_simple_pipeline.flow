@@ -1,0 +1,13 @@
+# 05_simple_pipeline.flow
+# Filtering and transforming list data with inline pipelines
+
+let numbers <- [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+show "Original List:"
+show numbers
+
+show "Even Numbers Multiplied by 10:"
+numbers
+  |> keep x where x % 2 == 0
+  |> transform x into x * 10
+  |> show

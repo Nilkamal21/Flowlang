@@ -1,0 +1,35 @@
+# 10_data_processing_program.flow
+# Long end-to-end data processing application
+
+# Helper Functions
+define calculate_tax(amount):
+    give amount * 0.15
+
+define apply_discount(amount):
+    when amount > 100:
+        give amount - 20
+    otherwise:
+        give amount
+
+define format_final_price(price):
+    let discounted <- apply_discount(price)
+    let tax <- calculate_tax(discounted)
+    give discounted + tax
+
+show "=== Flowlang E-Commerce Order Processor ==="
+
+let order_prices <- [25, 120, 45, 200, 85, 150, 10, 300]
+
+show "Initial Orders:"
+show order_prices
+
+# Process orders:
+# 1. Filter out minor purchases (< 50)
+# 2. Apply discount & tax via custom pipeline transformation function
+show "Final Processed High-Value Orders:"
+order_prices
+  |> keep item where item >= 50
+  |> transform item using format_final_price
+  |> show
+
+show "=== Processing Completed Successfully ==="
