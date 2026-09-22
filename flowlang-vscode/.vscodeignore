@@ -1,7 +1,0 @@
-.githistory
-.git/
-.gitignore
-.vscode/
-node_modules/
-*.vsix
-*.log
