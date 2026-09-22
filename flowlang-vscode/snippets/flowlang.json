@@ -1,0 +1,44 @@
+{
+  "Variable Declaration": {
+    "prefix": "let",
+    "body": [
+      "let ${1:variable_name} <- ${2:value}"
+    ],
+    "description": "Flowlang variable declaration statement"
+  },
+  "Function Definition": {
+    "prefix": "define",
+    "body": [
+      "define ${1:function_name}(${2:parameters}):",
+      "\tgive ${3:return_expression}"
+    ],
+    "description": "Flowlang function definition statement"
+  },
+  "Conditional Branch": {
+    "prefix": "when",
+    "body": [
+      "when ${1:condition}:",
+      "\t${2:show \"Passed\"}",
+      "otherwise:",
+      "\t${3:show \"Failed\"}"
+    ],
+    "description": "Flowlang conditional when/otherwise block"
+  },
+  "Pipeline Expression": {
+    "prefix": "pipeline",
+    "body": [
+      "${1:list_variable}",
+      "  |> keep ${2:item} where ${3:item > 0}",
+      "  |> transform ${4:item} into ${5:item * 2}",
+      "  |> show"
+    ],
+    "description": "Flowlang data transformation pipeline"
+  },
+  "Show Statement": {
+    "prefix": "show",
+    "body": [
+      "show ${1:expression}"
+    ],
+    "description": "Flowlang output statement"
+  }
+}

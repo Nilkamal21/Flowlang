@@ -25,6 +25,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.vsix
 
 # Pytest / Unit Test caches
 .pytest_cache/
@@ -33,13 +34,15 @@ MANIFEST
 htmlcov/
 .hypothesis/
 
-# Virtual Environments
+# Virtual Environments & Test Envs
 venv/
 .venv/
 env/
 ENV/
 env.bak/
 venv.bak/
+production-test-env/
+testpypi-env/
 
 # IDEs and Editors
 .vscode/

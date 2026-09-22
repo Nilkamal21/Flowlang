@@ -1,0 +1,55 @@
+{
+  "name": "flowlang-vscode",
+  "displayName": "Flowlang",
+  "description": "VS Code language support for Flowlang - a pipeline-oriented programming language with Compiler and Virtual Machine.",
+  "version": "0.1.0",
+  "publisher": "flowlang",
+  "license": "MIT",
+  "keywords": [
+    "flowlang",
+    "pipeline",
+    "compiler",
+    "virtual-machine",
+    "syntax-highlighting",
+    "snippets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nilkamal21/Flowlang.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "flowlang",
+        "aliases": [
+          "Flowlang",
+          "flowlang"
+        ],
+        "extensions": [
+          ".flow"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flowlang",
+        "scopeName": "source.flowlang",
+        "path": "./syntaxes/flowlang.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "flowlang",
+        "path": "./snippets/flowlang.json"
+      }
+    ]
+  }
+}
