@@ -52,8 +52,8 @@
 ### 1. Global Command Installation (Recommended)
 Clone the repository and install locally using `pip`:
 ```bash
-git clone https://github.com/your-username/FlowX.git
-cd FlowX
+git clone https://github.com/Nilkamal21/Flowlang.git
+cd Flowlang
 pip install -e .
 ```
 Now run any Flowlang script directly from your terminal:
@@ -153,16 +153,16 @@ Flowlang includes 10 sample programs demonstrating language constructs:
 
 | File | Description | Highlights |
 | :--- | :--- | :--- |
-| **[01_hello_world.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/01_hello_world.flow)** | Minimal starter program | Variable declarations, string output |
-| **[02_arithmetic.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/02_arithmetic.flow)** | Math operations | Precedence, modulo, negative numbers |
-| **[03_conditionals.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/03_conditionals.flow)** | Control flow | `when` / `otherwise`, logical `and`/`or` |
-| **[04_functions.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/04_functions.flow)** | Subroutines | `define`, `give`, argument passing |
-| **[05_simple_pipeline.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/05_simple_pipeline.flow)** | Pipelines | Inline list filtering and mapping |
-| **[06_function_pipeline.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/06_function_pipeline.flow)** | Pipelines | Using custom functions in pipeline stages |
-| **[07_nested_conditionals.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/07_nested_conditionals.flow)** | Branching | Multi-level decision trees |
-| **[08_complex_pipeline.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/08_complex_pipeline.flow)** | Data streams | Multi-stage pipeline processing |
-| **[09_math_library.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/09_math_library.flow)** | Standard math | Custom `abs`, `max`, `min`, `clamp` |
-| **[10_data_processing_program.flow](file:///C:/Users/adhik/OneDrive/Desktop/FlowX/examples/10_data_processing_program.flow)** | Full application | E-commerce order processing pipeline |
+| **[01_hello_world.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/01_hello_world.flow)** | Minimal starter program | Variable declarations, string output |
+| **[02_arithmetic.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/02_arithmetic.flow)** | Math operations | Precedence, modulo, negative numbers |
+| **[03_conditionals.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/03_conditionals.flow)** | Control flow | `when` / `otherwise`, logical `and`/`or` |
+| **[04_functions.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/04_functions.flow)** | Subroutines | `define`, `give`, argument passing |
+| **[05_simple_pipeline.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/05_simple_pipeline.flow)** | Pipelines | Inline list filtering and mapping |
+| **[06_function_pipeline.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/06_function_pipeline.flow)** | Pipelines | Using custom functions in pipeline stages |
+| **[07_nested_conditionals.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/07_nested_conditionals.flow)** | Branching | Multi-level decision trees |
+| **[08_complex_pipeline.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/08_complex_pipeline.flow)** | Data streams | Multi-stage pipeline processing |
+| **[09_math_library.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/09_math_library.flow)** | Standard math | Custom `abs`, `max`, `min`, `clamp` |
+| **[10_data_processing_program.flow](file:///C:/Users/adhik/OneDrive/Desktop/Flowlang/examples/10_data_processing_program.flow)** | Full application | E-commerce order processing pipeline |
 
 ---
 
@@ -180,25 +180,29 @@ python -m pytest
 ## 📂 Project Directory Sitemap
 
 ```text
-FlowX/
-├── cli.py                  # Main CLI entry point & argument parser
-├── flowlang.cmd            # Windows executable batch script launcher
-├── setup.py                # Setuptools packaging & console_scripts configuration
-├── tokens.py               # Lexical token definitions & TokenType enum
-├── lexer.py                # Scanner & Pythonic indentation logic (INDENT/DEDENT)
-├── parser.py               # EBNF grammar recursive descent parser
-├── ast_nodes.py            # AST node class hierarchy
-├── environment.py          # Scope environment memory manager
-├── interpreter.py          # Tree-Walking AST Interpreter
-├── semantic.py             # Static semantic analyzer & scope checker
-├── bytecode.py             # ISA Opcode enums & Instruction definitions
-├── compiler.py             # AST to Bytecode compiler with jump backpatching
-├── vm.py                   # Stack Virtual Machine execution engine
+Flowlang/
+├── flowlang/                   # Core Package Directory
+│   ├── __init__.py             # Package exports & version (__version__)
+│   ├── tokens.py               # Lexical token definitions & TokenType enum
+│   ├── lexer.py                # Scanner & Pythonic indentation logic (INDENT/DEDENT)
+│   ├── parser.py               # EBNF grammar recursive descent parser
+│   ├── ast_nodes.py            # AST node class hierarchy
+│   ├── environment.py          # Scope environment memory manager
+│   ├── interpreter.py          # Tree-Walking AST Interpreter
+│   ├── semantic.py             # Static semantic analyzer & scope checker
+│   ├── bytecode.py             # ISA Opcode enums & Instruction definitions
+│   ├── compiler.py             # AST to Bytecode compiler with jump backpatching
+│   ├── vm.py                   # Stack Virtual Machine execution engine
+│   └── cli.py                  # Main CLI entry point & argument parser
 ├── docs/
-│   └── spec_v0.1.md        # Formal Language Specification
-├── EXPLANATION.md          # Comprehensive Architecture & Interview Guide
-├── examples/               # 10 test & demonstration programs (.flow)
-└── tests/                  # Pytest unit & integration test suite (74 tests)
+│   └── spec_v0.1.md            # Formal Language Specification
+├── examples/                   # 10 test & demonstration programs (.flow)
+├── tests/                      # Pytest unit & integration test suite (74 tests)
+├── .gitignore                  # Git ignore rules
+├── EXPLANATION.md              # Comprehensive Architecture & Interview Guide
+├── flowlang.cmd                # Windows executable launcher (`python -m flowlang.cli`)
+├── pyproject.toml              # Modern PEP 517/518 build configuration
+└── README.md                   # Project documentation homepage
 ```
 
 ---
